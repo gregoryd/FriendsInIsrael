@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+/* code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+.form-input{
+  background-color: #f3f6ff;
+  border-radius: 30px;
+  border: none; 
+  padding: 10px 20px; 
+  width: 100%; 
+}
+
+#choose-role-button{
+  background-color: #f3f6ff;
+  border-radius: 7px;
+ color: #677191;
+ 
+}
+
+.main-header{
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.suggested-family{
+  background-color: #f3f6ff;
+  border-radius: 10px;
+
+  /* border: 2px solid #567df4 */
+}
+
+.prefix-blue{
+  width: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #567df4 ; 
+}
+
+.potential-family{
+  border: 2px solid #d4defe; 
+  border-radius: 10px;
+}
+
+.boxInstructions{
+  background-color: #f6f8fe;
+  border: 1px solid #d4defe; 
+}
+#chosen-role-button{
+  background-color: #f3f6ff;
+  color: #567df4;
+  border: 2px solid #567df4; 
+  border-radius: 7px;
+  font-weight: 500
+}
+
+.go-on-button{
+  border-radius: 30px;
+  border: none; 
+  padding: 10px 20px; 
+  width: 100%; 
+  background-color: #567df4;
+  height: 55px;
+  font-weight: 500; 
+}
+
+.matchMeButton{
+  background-color: #567df4;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 20px; 
+}
+
+.matchMeButton2{
+  background-color: #567df4;
+  color: white;
+  font-weight: 500;
+  border: none;
+  border-radius: 20px;
+  width: 100%; 
+
+  margin-top: 20px; 
+  padding: 10px 20px; 
+}
+
+#modalPosition{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 270px; 
+  height: 154px; 
+}
+.yesNoModal{
+  font-weight: 500;
+  font-size: 15px; 
+  width: 50%; 
+  text-align: center;
+  border-top: 1px solid  #a9aaae;
+  padding: 10px 20px; 
+}
+.matchMeButton3{
+  background-color: #efefef;
+  color: black;
+  font-weight: 500;
+  border: none;
+  border-radius: 20px;
+  width: 100%; 
+  margin-top: 20px; 
+  padding: 15px 20px; 
+}
+
+
+.littleHeading{
+
+  color: #677191;
+  font-size: 13px;
+}
+
+.inputAsDiv{
+  border: none; 
+  font-size: 14px;
+  width: 100%;
+  resize: none;
+}
+
+.inputAsDiv:focus{
+  outline: none; 
+  width: 100%;
+}
+
+.editedInput{
+resize: none;
+width: 100%;
+font-size: 14px;
+}
