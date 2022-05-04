@@ -105,36 +105,23 @@ export class Family extends IdEntity {
         });
 
         if (!newFamily) {
-            newFamily = await familyRepo.findFirst(
+            let newFamilies = await familyRepo.find({
+                where:
                 {
                     lengthTimeInIsrael: shortTimeInIsrael,
                     status: Status.waitingForMatch,
                     allocatedAssigner: "",
-                    lastAssignAttempt: null!,
                     id: { "!=": excludeIds }
                 },
-                {
-                    orderBy: {
-                        lastAssignAttempt: "asc",
-                    },
+                orderBy: {
+                    lastAssignAttempt: "asc",
                 }
-            );
-        }
-        if (!newFamily) {
-            newFamily = await familyRepo.findFirst(
-                {
-                    lengthTimeInIsrael: shortTimeInIsrael,
-                    status: Status.waitingForMatch,
-                    allocatedAssigner: "",
-                    lastAssignAttempt: { "!=": null! },
-                    id: { "!=": excludeIds }
-                },
-                {
-                    orderBy: {
-                        lastAssignAttempt: "asc",
-                    },
-                }
-            );
+            });
+            if (newFamilies.length > 0) {
+                newFamilies.sort((a, b) => (a.lastAssignAttempt?.valueOf() || 0 - b.lastAssignAttempt?.valueOf() || 0))
+                newFamily = newFamilies[0];
+                console.table(newFamilies.map(f => ({ n: f.name, l: f.lastAssignAttempt })))
+            }
         }
 
         if (newFamily) {
