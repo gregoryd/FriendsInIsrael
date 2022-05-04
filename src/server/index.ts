@@ -27,12 +27,11 @@ if (!credentials) {
     credentials = fs.readFileSync('client_secret.json').toString();
 }
 
-
 app.use(remultExpress({
     dataProvider: async () => {
 
         return new GoogleSheetsDataProvider(JSON.parse(credentials!), {
-            sheetId: process.env.sheet_id!,
+            sheetId: process.env.sheet_id||'1ub9ybA0g3gmPLLHGfbc2HHuNsdVrJAqVkdj_ccmc8-g',
             optimisticUpdates: true,
             secondsToCacheQueries: 5
         });
