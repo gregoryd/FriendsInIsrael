@@ -120,7 +120,7 @@ export class Family extends IdEntity {
             if (newFamilies.length > 0) {
                 newFamilies.sort((a, b) => (a.lastAssignAttempt?.valueOf() || 0 - b.lastAssignAttempt?.valueOf() || 0))
                 newFamily = newFamilies[0];
-                console.table(newFamilies.map(f => ({ n: f.name, l: f.lastAssignAttempt })))
+                //console.table(newFamilies.map(f => ({ n: f.name, l: f.lastAssignAttempt })))
             }
         }
 
