@@ -105,13 +105,22 @@ export class Family extends IdEntity {
         });
 
         if (!newFamily) {
+            let halfHourAgo = new Date();
+            halfHourAgo.setMinutes(halfHourAgo.getMinutes() - 30);
             let newFamilies = await familyRepo.find({
                 where:
                 {
                     lengthTimeInIsrael: shortTimeInIsrael,
                     status: Status.waitingForMatch,
-                    allocatedAssigner: "",
-                    id: { "!=": excludeIds }
+
+                    id: { "!=": excludeIds },
+                    $or: [
+                        { allocatedAssigner: "" },
+                        {
+                            allocatedAssigner: { "!=": "" },
+                            lastAssignAttempt: { "<": halfHourAgo }
+                        }
+                    ]
                 },
                 orderBy: {
                     lastAssignAttempt: "asc",
